@@ -19,17 +19,17 @@ One of the oldest methods for computing the [square root](https://mathworld.wolf
 
 Assuming that you need to solve for the square root of $x$, the algorithm works as follows:
 
-# *Choose an epsilon value* that determines how close your solution should be to the actual square root value before you decide it is "good enough." Because this assignment asks you to solve for the square root to three decimal places, we can safely set the epsilon value to 0.0001 (four decimal places). This guarantees that our solution will be accurate to the precision we need for displaying to the screen.
+1. *Choose an epsilon value* that determines how close your solution should be to the actual square root value before you decide it is "good enough." Because this assignment asks you to solve for the square root to three decimal places, we can safely set the epsilon value to 0.0001 (four decimal places). This guarantees that our solution will be accurate to the precision we need for displaying to the screen.
 
-# *Choose an initial estimate* $e$ for the square root of $x$. An easy and perfectly valid approach is to set the initial estimate $e=x$. For example, you could set the first estimate for the square root of 4 to be 4.
+1. *Choose an initial estimate* $e$ for the square root of $x$. An easy and perfectly valid approach is to set the initial estimate $e=x$. For example, you could set the first estimate for the square root of 4 to be 4.
 
-# *Evaluate the estimate* by dividing the value $x$ by your estimate $e$, and comparing the result of that division to the current estimate $e$. If your estimate $e$ were to be exactly equal to the square root, then you would find that $\frac{x}{e}=e$. In practice, unless you are lucky, there will typically be some difference between these two values ($\frac{x}{e}$ and $e$) even after many iterations of the algorithm.
+1. *Evaluate the estimate* by dividing the value $x$ by your estimate $e$, and comparing the result of that division to the current estimate $e$. If your estimate $e$ were to be exactly equal to the square root, then you would find that $\frac{x}{e}=e$. In practice, unless you are lucky, there will typically be some difference between these two values ($\frac{x}{e}$ and $e$) even after many iterations of the algorithm.
 
-# *Determine if the estimate is "good enough" to stop.* A smaller difference between $\frac{x}{e}$ and $e$ reflects a more accurate estimate. If the difference is smaller than your epsilon value, then you've found the answer! If not---if the difference is greater than the epsilon value---then you need to proceed to step 5 below to make your estimate more accurate.
+1. *Determine if the estimate is "good enough" to stop.* A smaller difference between $\frac{x}{e}$ and $e$ reflects a more accurate estimate. If the difference is smaller than your epsilon value, then you've found the answer! If not---if the difference is greater than the epsilon value---then you need to proceed to step 5 below to make your estimate more accurate.
 
-** Note that you'll want to look at the absolute value of the difference between $\frac{x}{e}$ and $e$. This is because $e$ may be too large or too small. To test for the absolute value, you could use if/else logic to see which term ($\frac{x}{e}$ or $e$) is smaller. You could then subtract the smaller value from the larger one. Alternatively, you could use the Python's built-in function abs().
+   - Note that you'll want to look at the absolute value of the difference between $\frac{x}{e}$ and $e$. This is because $e$ may be too large or too small. To test for the absolute value, you could use if/else logic to see which term ($\frac{x}{e}$ or $e$) is smaller. You could then subtract the smaller value from the larger one. Alternatively, you could use the Python's built-in function abs().
 
-# *Revise the esimate( (if needed based on Step 4) by setting $e$ to the average of the fraction $\frac{x}{e}$ and your old estimate $e$. Using this new estimate, go back to Step 3.
+1. *Revise the esimate( (if needed based on Step 4) by setting $e$ to the average of the fraction $\frac{x}{e}$ and your old estimate $e$. Using this new estimate, go back to Step 3.
 
 For this assignment, you'll need to write a program that solves for square roots using the algorithm outlined above. See the "Basic" and "Advanced" requirements sections below for more detailed instructions.
 
@@ -58,10 +58,10 @@ Expand on the basic requirements by extending your program as follows.
 * Ask the user if they want to calculate square roots for a single value, or for a range of values.
 * If the user chooses to calculate the square root for a single value, the program should operate exactly as described in the Basic Requirements.
 * If the user chooses to calculate the square root for a range, then the program should behave as follows:
-** Ask the user to enter a minimum integer value (the start of the range) and make sure that it is a valid integer above zero.
-** Ask the user to enter a maximum integer value (the end of the range) and validate that it is a valid integer above zero.
-** Print a table displaying the square root value for each number in the range (starting with the minimum value, ending with the maximum value, and for every value in between). The table should have two columns: one for the initial value, and the send for its square root.
-** The table should display the square root values with exactly 3 decimal places, and should right-align the numbers when printing. In this way, the square root for 100 will appear aligned with the square root for 90 in your table.
+   * Ask the user to enter a minimum integer value (the start of the range) and make sure that it is a valid integer above zero.
+   * Ask the user to enter a maximum integer value (the end of the range) and validate that it is a valid integer above zero.
+   * Print a table displaying the square root value for each number in the range (starting with the minimum value, ending with the maximum value, and for every value in between). The table should have two columns: one for the initial value, and the send for its square root.
+   * The table should display the square root values with exactly 3 decimal places, and should right-align the numbers when printing. In this way, the square root for 100 will appear aligned with the square root for 90 in your table.
 
 For example, if the user enters 9 as the minimum for the range and 11 as the maximum for the range, your answer should produce a table with three rows (for 9, 10, and 11) and two columns (one for the initial values 9,10,11; and a second for the corresponding square root values).
 
